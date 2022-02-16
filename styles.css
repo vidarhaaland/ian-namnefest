@@ -4,10 +4,16 @@
 	--clr-bg-light: #f8f4f4;
 	--clr-bg-light-transp: #f5ebe900;
 	--clr-drk: #451708;
-	--clr-accent: rgba(90, 119, 82, 0.836);
+	--clr-accent: rgba(119, 82, 105, 0.836);
 	--scroll-element-height: 200px;
 	--gradient: linear-gradient(
 		90deg,
+		rgba(2, 0, 36, 1) 0%,
+		rgba(208, 43, 206, 1) 0%,
+		rgba(96, 228, 255, 1) 100%
+	);
+	--gradient-from-top: linear-gradient(
+		180deg,
 		rgba(2, 0, 36, 1) 0%,
 		rgba(208, 43, 206, 1) 0%,
 		rgba(96, 228, 255, 1) 100%
@@ -49,11 +55,17 @@ html:focus-within {
 /* Set core body defaults */
 body {
 	min-height: 100vh;
+	/* mobile viewport bug fix */
+	min-height: -webkit-fill-available;
 	text-rendering: optimizeSpeed;
 	line-height: 1.5;
 	background-color: var(--clr-bg);
 	color: var(--clr-drk);
 	font-family: "Nunito", sans-serif;
+}
+
+html {
+	height: -webkit-fill-available;
 }
 
 /* A elements that don't have a class get default styles */
@@ -168,6 +180,8 @@ body {
 	gap: 1rem;
 	height: var(--scroll-element-height);
 	scroll-snap-type: y mandatory;
+	/* outline: 1px solid white; */
+	/* padding-left: 0.5em; */
 }
 
 .scroll--element {
@@ -175,6 +189,7 @@ body {
 	min-height: var(--scroll-element-height);
 	display: grid;
 	align-content: center;
+	padding-right: 0.75rem;
 }
 
 .fader {
@@ -190,32 +205,78 @@ body {
 
 .elvira {
 	margin-top: -8rem;
-	animation: dance 0.5s alternate ease-in-out infinite;
+	z-index: 100000;
+	position: relative;
+	width: 350px;
+	height: 300px;
 }
 
-@keyframes dance {
+.elvira img {
+	position: absolute;
+}
+
+.elvira img.elvira__head {
+	animation: headBounce 1s ease-in-out alternate infinite;
+	transform-origin: center center;
+}
+
+.elvira.ultra-dance img.elvira__head {
+	animation: ultra 0.45s alternate ease-in-out infinite;
+}
+@keyframes headBounce {
 	0% {
-		transform: translate(-5px, 8px) rotate(4deg);
+		transform: translate(3px, 3px) rotate(-2deg);
 	}
 	100% {
-		transform: translate(5px, -8px) rotate(-4deg);
+		transform: translate(0, 0) rotate(0);
+	}
+}
+@keyframes ultra {
+	0% {
+		transform: translate(3px, 5px);
+	}
+	100% {
+		transform: translate(-2px, 5px);
 	}
 }
 
 .scroll--indicator {
 	font-weight: 900;
-	opacity: 0.75;
 	transform: translateY(20px);
+	opacity: 0.75;
+	transition: opacity 0.25s linear;
+}
+
+.scroll--indicator.hidden {
+	opacity: 0;
 }
 
 .scroll--indicator span {
 	display: inline-block;
 	font-size: 1.25rem;
-	animation: bounce 1s alternate infinite;
+	animation: bounce 0.5s alternate infinite;
 }
 
 @keyframes bounce {
 	100% {
 		transform: translateY(5px);
 	}
+}
+
+.styled-scrollbars {
+	/* Foreground, Background */
+	scrollbar-color: #999 #333;
+}
+.styled-scrollbars::-webkit-scrollbar {
+	width: 10px; /* Mostly for vertical scrollbars */
+	height: 0; /* Mostly for horizontal scrollbars */
+}
+.styled-scrollbars::-webkit-scrollbar-thumb {
+	/* Foreground */
+	background: var(--gradient-from-top);
+	background: rgb(255, 0, 179);
+}
+.styled-scrollbars::-webkit-scrollbar-track {
+	/* Background */
+	background: #fff;
 }

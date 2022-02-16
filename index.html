@@ -5,12 +5,13 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="styles.css" />
+		<script src="script.js" defer></script>
 		<title>Elvira 🕶</title>
 	</head>
 	<body>
 		<div class="wrapper">
 			<div class="quote--box">
-				<div class="scroll--container">
+				<div class="scroll--container styled-scrollbars">
 					<p class="scroll--element">
 						<span class="congrats">Gratulerer!</span>
 						<!-- <span class="emoji">😎</span> -->
@@ -80,7 +81,7 @@
 						skrive og så legga den i ein sekk som Elvira skal få når
 						ho er konfirmant.
 					</p>
-					<p class="scroll--element">
+					<p class="scroll--element scroll--element--last">
 						<span class="emoji">👨‍👩‍👧</span>
 						Vi gler oss til å sjå deg
 						<strong class="important"
@@ -92,11 +93,14 @@
 					</p>
 				</div>
 				<div class="scroll--indicator">
-					<p><span>&darr;</span> Scroll ned</p>
+					<p><span>&darr;</span> Scroll i teksten over</p>
 				</div>
 				<div class="fader"></div>
 			</div>
-			<img src="elvira.png" alt="Elvira vår" class="elvira" />
+			<div class="elvira">
+				<img class="elvira__body" src="elvira-body.png" alt="" />
+				<img class="elvira__head" src="elvira-head.png" alt="" />
+			</div>
 		</div>
 	</body>
 </html>
