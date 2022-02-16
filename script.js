@@ -12,7 +12,7 @@ window.addEventListener("resize", (e) => {
 const options = {
 	root: document.querySelector(".scroll--container"),
 	rootMargin: "0px",
-	threshold: 1.0,
+	threshold: 0.25,
 };
 
 const callback = (entries, observer) => {
