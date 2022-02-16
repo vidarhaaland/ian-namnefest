@@ -222,14 +222,14 @@ body {
 }
 
 .elvira.ultra-dance img.elvira__head {
-	animation: ultra 0.45s alternate ease-in-out infinite;
+	animation: ultra 0.35s alternate ease-in-out infinite;
 }
 @keyframes headBounce {
 	0% {
-		transform: translate(3px, 3px) rotate(-2deg);
+		transform: translate(0, 0) rotate(0);
 	}
 	100% {
-		transform: translate(0, 0) rotate(0);
+		transform: translate(3px, 3px) rotate(-2deg);
 	}
 }
 @keyframes ultra {
