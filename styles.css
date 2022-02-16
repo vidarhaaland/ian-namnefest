@@ -54,18 +54,19 @@ html:focus-within {
 
 /* Set core body defaults */
 body {
-	min-height: 100vh;
 	/* mobile viewport bug fix */
-	min-height: -webkit-fill-available;
+	min-height: var(--viewport-height);
 	text-rendering: optimizeSpeed;
 	line-height: 1.5;
 	background-color: var(--clr-bg);
 	color: var(--clr-drk);
 	font-family: "Nunito", sans-serif;
+	overflow: hidden;
 }
 
 html {
-	height: -webkit-fill-available;
+	min-height: var(--viewport-height);
+	overflow: hidden;
 }
 
 /* A elements that don't have a class get default styles */
@@ -216,7 +217,7 @@ body {
 }
 
 .elvira img.elvira__head {
-	animation: headBounce 1s ease-in-out alternate infinite;
+	animation: headBounce 0.5s ease-in-out alternate infinite;
 	transform-origin: center center;
 }
 

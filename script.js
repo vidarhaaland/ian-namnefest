@@ -1,5 +1,13 @@
 const scrollIndicator = document.querySelector(".scroll--indicator");
 const elvira = document.querySelector(".elvira");
+const root = document.documentElement;
+
+root.style.setProperty("--viewport-height", window.innerHeight);
+
+window.addEventListener("resize", (e) => {
+	console.log(window.innerHeight);
+	root.style.setProperty("--viewport-height", window.innerHeight);
+});
 
 const options = {
 	root: document.querySelector(".scroll--container"),
@@ -8,7 +16,6 @@ const options = {
 };
 
 const callback = (entries, observer) => {
-	console.log(entries);
 	entries.forEach((entry) => {
 		if (entry.isIntersecting) {
 			scrollIndicator.classList.add("hidden");
