@@ -147,11 +147,12 @@ body {
 	background-color: var(--clr-bg-light);
 	width: 90%;
 	max-width: 360px;
-	padding: 2rem;
 	border-radius: 50px;
 	height: 350px;
 	/* box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px; */
 	position: relative;
+	outline: 1px solid pink;
+	padding-top: 2rem;
 }
 
 .quote--box::after {
@@ -181,6 +182,7 @@ body {
 	gap: 1rem;
 	height: var(--scroll-element-height);
 	scroll-snap-type: y mandatory;
+	margin-right: 1rem;
 	/* outline: 1px solid white; */
 	/* padding-left: 0.5em; */
 }
@@ -190,7 +192,7 @@ body {
 	min-height: var(--scroll-element-height);
 	display: grid;
 	align-content: center;
-	padding-right: 0.75rem;
+	padding: 2rem 1.5rem 2rem 2rem;
 }
 
 .fader {
@@ -246,6 +248,9 @@ body {
 	transform: translateY(20px);
 	opacity: 0.75;
 	transition: opacity 0.25s linear;
+	padding: 0 2rem;
+	position: relative;
+	z-index: 999999;
 }
 
 .scroll--indicator.hidden {
