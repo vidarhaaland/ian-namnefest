@@ -289,7 +289,7 @@ body {
 .styled-scrollbars::-webkit-scrollbar-thumb {
 	/* Foreground */
 	background: var(--gradient-from-top);
-	background: rgb(255, 0, 179);
+	background: rgb(34, 103, 183);
 }
 .styled-scrollbars::-webkit-scrollbar-track {
 	/* Background */
