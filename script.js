@@ -1,5 +1,5 @@
 const scrollIndicator = document.querySelector(".scroll--indicator");
-const elvira = document.querySelector(".elvira");
+const ian = document.querySelector(".ian");
 const root = document.documentElement;
 
 root.style.setProperty("--viewport-height", window.innerHeight);
@@ -19,10 +19,10 @@ const callback = (entries, observer) => {
 	entries.forEach((entry) => {
 		if (entry.isIntersecting) {
 			scrollIndicator.classList.add("hidden");
-			elvira.classList.add("ultra-dance");
+			ian.classList.add("ultra-dance");
 		} else {
 			scrollIndicator.classList.remove("hidden");
-			elvira.classList.remove("ultra-dance");
+			ian.classList.remove("ultra-dance");
 		}
 	});
 };

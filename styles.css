@@ -1,21 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;700&family=Playfair+Display&display=swap");
 :root {
-	--clr-bg: #f8bfff4b;
+	--clr-bg: #d5e6f0;
 	--clr-bg-light: #f8f4f4;
 	--clr-bg-light-transp: #f5ebe900;
-	--clr-drk: #451708;
+	--clr-drk: #2e2b7e;
 	--clr-accent: rgba(119, 82, 105, 0.836);
 	--gradient: linear-gradient(
 		90deg,
-		rgba(2, 0, 36, 1) 0%,
-		rgba(208, 43, 206, 1) 0%,
-		rgba(96, 228, 255, 1) 100%
+		#75B4DF 0%,
+		#10354A 100%
 	);
 	--gradient-from-top: linear-gradient(
 		180deg,
-		rgba(2, 0, 36, 1) 0%,
-		rgba(208, 43, 206, 1) 0%,
-		rgba(96, 228, 255, 1) 100%
+		#75B4DF 0%,
+		#10354A 100%
 	);
 	--space: 1.8rem;
 	--scroll-element-height: 220px;
@@ -90,6 +88,10 @@ select {
 	font: inherit;
 }
 
+p, h1, h2, h3, h4, h5, h6 {
+	text-wrap: balance;
+}
+
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
 	html:focus-within {
@@ -137,10 +139,9 @@ body {
 
 .wrapper {
 	height: 90vh;
-	width: 90vw;
 	max-height: 844px;
 	display: grid;
-	place-items: center;
+	place-items: start;
 	align-content: center;
 }
 
@@ -152,6 +153,8 @@ body {
 	height: calc(var(--scroll-element-height) + 130px);
 	position: relative;
 	padding-top: var(--space);
+	justify-self: center;
+	margin-top: -3.5rem;
 }
 
 .quote--box::after {
@@ -182,6 +185,7 @@ body {
 	height: var(--scroll-element-height);
 	scroll-snap-type: y mandatory;
 	margin-right: 1rem;
+	scroll-snap-stop: always;
 	/* outline: 1px solid white; */
 	/* padding-left: 0.5em; */
 }
@@ -205,40 +209,47 @@ body {
 	);
 }
 
-.elvira {
-	margin-top: -8rem;
-	z-index: 100000;
+.ian {
+	width: 80%;
+	pointer-events:  none;
+	user-select: none;
 	position: relative;
-	width: 350px;
-	height: 300px;
+	z-index: 10;
 }
 
-.elvira img {
+.ian img.ian__head {
+	inset: 0;
 	position: absolute;
-}
-
-.elvira img.elvira__head {
 	animation: headBounce 0.5s ease-in-out alternate infinite;
 	transform-origin: center center;
+	scale: 1.05;
 }
 
-.elvira.ultra-dance img.elvira__head {
-	animation: ultra 0.35s alternate ease-in-out infinite;
+.ian.ultra-dance img.ian__head {
+	animation: ultra 0.5s alternate ease-in-out infinite;
 }
+
+@media screen and (min-width: 400px) {
+	.ian {
+		mask-image: linear-gradient(to right, transparent 0%, black 35%);
+	}
+}
+
+
 @keyframes headBounce {
 	0% {
-		transform: translate(0, 0) rotate(0);
+		transform: translate(-4px, 6px) rotate(0);
 	}
 	100% {
-		transform: translate(3px, 3px) rotate(-2deg);
+		transform: translate(-4px, 9px) rotate(-3deg);
 	}
 }
 @keyframes ultra {
 	0% {
-		transform: translate(3px, 5px);
+		transform: translate(-4px, 6px) rotate(0);
 	}
 	100% {
-		transform: translate(-2px, 5px);
+		transform: translate(0px, 9px) rotate(-7deg);
 	}
 }
 
