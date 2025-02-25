@@ -5,16 +5,8 @@
 	--clr-bg-light-transp: #f5ebe900;
 	--clr-drk: #2e2b7e;
 	--clr-accent: rgba(119, 82, 105, 0.836);
-	--gradient: linear-gradient(
-		90deg,
-		#75B4DF 0%,
-		#10354A 100%
-	);
-	--gradient-from-top: linear-gradient(
-		180deg,
-		#75B4DF 0%,
-		#10354A 100%
-	);
+	--gradient: linear-gradient(90deg, #75b4df 0%, #10354a 100%);
+	--gradient-from-top: linear-gradient(180deg, #75b4df 0%, #10354a 100%);
 	--space: 1.8rem;
 	--scroll-element-height: 220px;
 }
@@ -88,7 +80,13 @@ select {
 	font: inherit;
 }
 
-p, h1, h2, h3, h4, h5, h6 {
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
 	text-wrap: balance;
 }
 
@@ -211,7 +209,7 @@ body {
 
 .ian {
 	width: 80%;
-	pointer-events:  none;
+	pointer-events: none;
 	user-select: none;
 	position: relative;
 	z-index: 10;
@@ -220,13 +218,25 @@ body {
 .ian img.ian__head {
 	inset: 0;
 	position: absolute;
-	animation: headBounce 0.5s ease-in-out alternate infinite;
+	animation: headBounce 1.75s ease-in-out alternate infinite;
 	transform-origin: center center;
 	scale: 1.05;
 }
+.ian img.ian__head--glasses {
+	display: none;
+}
+
+.ian.ultra-dance img.ian__head--glasses {
+	animation: ultra 0.35s alternate ease-in-out infinite;
+	inset: 0;
+	position: absolute;
+	transform-origin: center center;
+	scale: 1.05;
+	display: block;
+}
 
 .ian.ultra-dance img.ian__head {
-	animation: ultra 0.5s alternate ease-in-out infinite;
+	display: none;
 }
 
 @media screen and (min-width: 400px) {
@@ -235,21 +245,20 @@ body {
 	}
 }
 
-
 @keyframes headBounce {
 	0% {
-		transform: translate(-4px, 6px) rotate(0);
+		transform: translate(-4px, 9px) rotate(0deg);
 	}
 	100% {
-		transform: translate(-4px, 9px) rotate(-3deg);
+		transform: translate(4px, 9px) rotate(-13deg);
 	}
 }
 @keyframes ultra {
 	0% {
-		transform: translate(-4px, 6px) rotate(0);
+		transform: translate(-3px, 9px) rotate(0deg);
 	}
 	100% {
-		transform: translate(0px, 9px) rotate(-7deg);
+		transform: translate(3px, 9px) rotate(0deg);
 	}
 }
 
