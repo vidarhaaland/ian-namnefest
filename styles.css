@@ -209,6 +209,7 @@ body {
 
 .ian {
 	width: 80%;
+	max-width: 500px;
 	pointer-events: none;
 	user-select: none;
 	position: relative;
