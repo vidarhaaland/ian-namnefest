@@ -270,7 +270,6 @@ body {
 	padding: 0 0 0 var(--space);
 	position: relative;
 	z-index: 999999;
-	outline: 1px solid pink;
 }
 
 .scroll--indicator.hidden {
