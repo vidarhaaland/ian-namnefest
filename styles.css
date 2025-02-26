@@ -267,9 +267,10 @@ body {
 	font-weight: 900;
 	opacity: 0.75;
 	transition: opacity 0.25s linear;
-	padding: 0 var(--space);
+	padding: 0 0 0 var(--space);
 	position: relative;
 	z-index: 999999;
+	outline: 1px solid pink;
 }
 
 .scroll--indicator.hidden {
